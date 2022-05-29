@@ -2,14 +2,10 @@ name: Deploy images to Amazon Elastic Container Registry
 on: 
   push:
     branches: [ dev ]
-
 jobs:
-  
   build: Create amazon ec2 container image
-    
     name: Build Image
     runs-on: amazon-latest
- 
     steps:
 
     - name: Check out code
