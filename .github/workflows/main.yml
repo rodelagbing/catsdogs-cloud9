@@ -40,6 +40,6 @@ jobs:
         docker run -d -p 80:8080 --name cont1 $ECR_REGISTRY/$ECR_REPOSITORY:$IMAGE_TAG
         docker ps
         echo "Pause for 10 seconds to let container start"
-        sleep 10
+        sleep 100
         curl localhost -vvv
         docker push $ECR_REGISTRY/$ECR_REPOSITORY:$IMAGE_TAG
