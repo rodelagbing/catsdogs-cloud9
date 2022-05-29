@@ -8,10 +8,9 @@ jobs:
   
   build:
     
-    name: Build Image
+    name: Build Image for cats container
     runs-on: ubuntu-latest
 
-   
     steps:
 
     - name: Check out code
