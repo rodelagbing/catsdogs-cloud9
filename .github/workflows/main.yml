@@ -3,8 +3,8 @@ on:
   push:
     branches: [ dev ]
 jobs:
-  build: Create amazon ec2 container image
-    - name: Build Image
+  build: 
+    name: Build Image
     runs-on: amazon-latest
     steps:
 
