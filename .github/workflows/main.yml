@@ -3,6 +3,9 @@ name: Deploy images to Amazon Elastic Container Registry
 on: 
   push:
     branches: [ dev ]
+ 
+  pull_request:
+    branches: [ master ]
 
 jobs:
   
@@ -33,9 +36,10 @@ jobs:
       env:
         ECR_REGISTRY: ${{ steps.login-ecr.outputs.registry }}
         ECR_REPOSITORY: clo835lab1-catsanddogs
-        IMAGE_TAG: dogs
+        IMAGE_TAG: cats
+    
       run: |
-        cd dogs
+        cd cats
         ls -ltra
         # Docker build
         docker build -t $ECR_REGISTRY/$ECR_REPOSITORY:$IMAGE_TAG .
