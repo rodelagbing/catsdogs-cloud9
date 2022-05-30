@@ -2,13 +2,13 @@ name: Deploy images to Amazon Elastic Container Registry
 
 on: 
   push:
-    branches: [ master ]
+    branches: [ dev ]
 
 jobs:
   
   build:
     
-    name: Build Image for cats container
+    name: Build Image for dogs container
     runs-on: ubuntu-latest
 
     steps:
@@ -19,7 +19,7 @@ jobs:
     - name: Login to Amazon ECR
       uses: actions/checkout@v3
       
-      - name: Login to Amazon ECR
+    - name: Login to Amazon ECR
 
       id: login-ecr
       uses: aws-actions/amazon-ecr-login@v1
@@ -29,13 +29,13 @@ jobs:
         AWS_SESSION_TOKEN: ${{ secrets.AWS_SESSION_TOKEN }}
         AWS_REGION: us-east-1
 
-    - name: Build, test, tag, and push image to Amazon ECR
+    - name: Build, test and tag image. Push to Amazon Elastic Container Registry
       env:
         ECR_REGISTRY: ${{ steps.login-ecr.outputs.registry }}
         ECR_REPOSITORY: clo835lab1-catsanddogs
-        IMAGE_TAG: cats
+        IMAGE_TAG: dogs
       run: |
-        cd cats
+        cd dogs
         ls -ltra
         # Docker build
         docker build -t $ECR_REGISTRY/$ECR_REPOSITORY:$IMAGE_TAG .
