@@ -36,8 +36,7 @@ jobs:
         IMAGE_TAG: cats, dogs 
     
       run: |
-        cd cats
-        cd dogs
+        cd cats, dogs
         ls -ltra
         # Docker build
         docker build -t $ECR_REGISTRY/$ECR_REPOSITORY:$IMAGE_TAG .
