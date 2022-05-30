@@ -3,8 +3,7 @@ name: Deploy images to Amazon Elastic Container Registry
 on: 
   push:
     branches: [ dev ]
- 
- 
+  
 jobs:
   
   build:
