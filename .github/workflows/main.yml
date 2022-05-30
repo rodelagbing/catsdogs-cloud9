@@ -33,8 +33,10 @@ jobs:
       env:
         ECR_REGISTRY: ${{ steps.login-ecr.outputs.registry }}
         ECR_REPOSITORY: clo835lab1-catsanddogs
-        IMAGE_TAG: dogs
+        IMAGE_TAG: cats, dogs 
+    
       run: |
+        cd cats
         cd dogs
         ls -ltra
         # Docker build
