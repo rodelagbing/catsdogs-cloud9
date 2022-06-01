@@ -1,9 +1,8 @@
-name: Deploy images to Amazon Elastic Container Registry
+name: Deploy dogs container image to Amazon Elastic Container Registry
 
 on: 
   push:
     branches: [ staging ]
- 
   
 jobs:
   
