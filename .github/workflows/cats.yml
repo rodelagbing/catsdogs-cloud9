@@ -38,7 +38,7 @@ jobs:
       run: |
         cd cats
         ls -ltra
-        # Docker build in dev branch
+        # Docker build in dev branch and push to ECR
         docker build -t $ECR_REGISTRY/$ECR_REPOSITORY:$IMAGE_TAG .
         # Unit test
         docker run -d -p 80:80 --name cont1 $ECR_REGISTRY/$ECR_REPOSITORY:$IMAGE_TAG
