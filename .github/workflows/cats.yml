@@ -1,4 +1,4 @@
-name: Deploy images to Amazon Elastic Container Registry
+name: Deploy cats container image to Amazon Elastic Container Registry
 
 on: 
   push:
