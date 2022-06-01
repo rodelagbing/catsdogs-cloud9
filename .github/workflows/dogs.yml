@@ -1,4 +1,4 @@
-name: Deploy dogs container image to Amazon Elastic Container Registry
+name: Deploy dogs container image to Amazon Elastic Container Registry.
 
 on: 
   push:
@@ -38,7 +38,7 @@ jobs:
       run: |
         cd dogs
         ls -ltra
-        # Docker build
+        # Docker build dogs container images in staging then push to ECR
         docker build -t $ECR_REGISTRY/$ECR_REPOSITORY:$IMAGE_TAG .
         # Unit test
         docker run -d -p 80:80 --name cont1 $ECR_REGISTRY/$ECR_REPOSITORY:$IMAGE_TAG
