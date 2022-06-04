@@ -1,5 +1,7 @@
 FROM nginx
-EXPOSE 8080
+
+EXPOSE 8081
+
 RUN apt-get update -y && \
   apt-get upgrade -y && \
   apt-get install -y curl && \
