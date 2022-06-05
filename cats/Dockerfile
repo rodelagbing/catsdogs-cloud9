@@ -1,6 +1,6 @@
 FROM nginx
 
-EXPOSE 8081
+EXPOSE 8080
 
 RUN apt-get update -y && \
   apt-get upgrade -y && \
